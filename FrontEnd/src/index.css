@@ -1,0 +1,35 @@
+body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+  font-family: 'Montserrat', 'Poppin';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  /* background-image: url('../src/background2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+   */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.text-violet{
+  color: #5e34c4;
+}
+
+a:hover{
+  color: #5e34c4;
+}
+
+.bg-violet{
+  background-color: #5e34c4!important;
+}
+.bg-violet:hover{
+  background-color: #472693!important;
+}

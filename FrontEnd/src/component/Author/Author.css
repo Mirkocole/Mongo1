@@ -1,0 +1,7 @@
+.cardAuthor{
+    transition: all .5s;
+}
+
+.cardAuthor:hover{
+    transform: scale(1.05);
+}

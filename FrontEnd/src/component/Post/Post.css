@@ -1,0 +1,18 @@
+.iconCard{
+    /* display: none; */
+    opacity: 0;
+    transition: all .8s;
+}
+
+.cardPost:hover .iconCard{
+    /* display: flex; */
+    opacity: 1;
+    transform: scale(0.8);
+}
+
+.cardPost{
+    transition: all .5s;
+}
+.cardPost:hover{
+    transform: scale(1.05);
+}
