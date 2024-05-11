@@ -104,7 +104,7 @@ export default function Blogs() {
     async function getBlogs() {
         // console.log(apiBlogs)
         try {
-            let res = await fetch('http://localhost:3001/blogPosts/', {
+            let res = await fetch(process.env.REACT_APP_URL_BLOGS, {
                 headers: { 'Content-Type': 'application/json' }
             })
 
@@ -125,7 +125,7 @@ export default function Blogs() {
             if (image.has('cover')) {
                 // console.log('sono nel primo if con immagine')
                 image.append('data', JSON.stringify(article));
-                let res = await fetch('http://localhost:3001/blogPosts/', {
+                let res = await fetch(process.env.REACT_APP_URL_BLOGS, {
                     method: 'POST',
                     body: image
                 });
@@ -139,7 +139,7 @@ export default function Blogs() {
                 }
             } else {
 
-                let res = await fetch('http://localhost:3001/blogPosts/', {
+                let res = await fetch(process.env.REACT_APP_URL_BLOGS, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(article)

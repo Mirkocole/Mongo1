@@ -82,7 +82,7 @@ export default function Authors() {
           if (image.has('avatar')) {
                 image.delete('data');
               image.append('data',JSON.stringify(valueForm))
-              let res = await fetch('http://localhost:3001/authors/', {
+              let res = await fetch(process.env.REACT_APP_URL_AUTHORS, {
                   method: 'POST',
                   headers: {'Content-Type' : 'application/json', 'Authorization' : 'Bearer '+localStorage.getItem('token')},
                   body: image
@@ -95,7 +95,7 @@ export default function Authors() {
               
           } else {
               
-              let res = await fetch('http://localhost:3001/authors/', {
+              let res = await fetch(process.env.REACT_APP_URL_AUTHORS, {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify(valueForm)
