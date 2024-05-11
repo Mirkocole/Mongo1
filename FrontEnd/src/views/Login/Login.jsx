@@ -22,7 +22,7 @@ export default function Login() {
 
 
     const handleGoogleLogin = ()=>{
-        window.open('http://localhost:3001/auth/googleLogin','_self');
+        window.open(process.env.REACT_APP_URL_AUTH+'auth/googleLogin','_self');
     }
 
     const handleAdmin = (ele)=>{
