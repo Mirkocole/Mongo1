@@ -9,13 +9,18 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Homepage() {
 
-    const {admin} = useContext(AuthContext);
+    const {admin, getAdmin} = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(()=>{
         if (!admin._id) {
-            localStorage.removeItem('token');
-            navigate('/');
+          if (!localStorage.getItem('token')) {
+              
+              localStorage.removeItem('token');
+              navigate('/');
+          } else {
+              getAdmin(localStorage.getItem('token'));
+          }
         }
     },[admin])
 

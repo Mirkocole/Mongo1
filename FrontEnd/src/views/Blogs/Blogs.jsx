@@ -10,15 +10,20 @@ export default function Blogs() {
 
 
     // Reindirizzo alla login se non esiste l'user loggato nel context
-    const { admin } = useContext(AuthContext);
+    const { admin, getAdmin } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    useEffect(() => {
+    useEffect(()=>{
         if (!admin._id) {
-            localStorage.removeItem('token');
-            navigate('/');
+          if (!localStorage.getItem('token')) {
+              
+              localStorage.removeItem('token');
+              navigate('/');
+          } else {
+              getAdmin(localStorage.getItem('token'));
+          }
         }
-    }, [admin])
+    },[admin])
 
 
     const apiBlogs = process.env.REACT_APP_URL_BLOGS;

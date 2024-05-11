@@ -13,28 +13,14 @@ export default function Profile() {
     const navigate = useNavigate();
     const [loggedIn,setLoggedIn] = useState(false);
 
-    const {admin,setAdmin} = useContext(AuthContext);
+    const {admin,setAdmin,getAdmin} = useContext(AuthContext);
     
-    async function getAdmin  () {
-        try {
-            let res = await fetch(process.env.REACT_APP_URL_AUTH+'me',{
-                headers:{'Content-Type' : 'application/json', 'Authorization' : 'Bearer '+params.get('accessToken')}
-            });
-
-            if(res){
-                let json = await res.json();
-                setAdmin(json);
-                return json;
-            }
-        } catch (error) {
-            
-        }
-    }
+    
 
     useEffect(()=>{
         
         if (params.has('accessToken')) {
-            getAdmin();
+            getAdmin(params.get('accessToken'));
             localStorage.setItem('token',params.get('accessToken'));
             
         }
