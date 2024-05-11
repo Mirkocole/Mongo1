@@ -70,7 +70,7 @@ export default function Login() {
                     <img src={Logo} style={{height : '150px'}} className=''/>
                     <Form>
                         <Form.Group className="mb-3">
-                            <Form.Label>Email</Form.Label>
+                            <Form.Label>Email+</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" id='email' onChange={(el)=>{handleAdmin(el.target)}}/>
                         </Form.Group>
 
