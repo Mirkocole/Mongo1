@@ -128,7 +128,7 @@ export default function Authors() {
       <Col xs={3} md={2} className='d-none d-md-flex flex-column shadow fixed-top' style={{height: '100vh', maxWidth : '150px'}}>
       <Sidebar />
     </Col>
-    <Col xs={12} md={8} >
+    <Col xs={12} md={10}>
         
         <MainNavbar />
           <Container fluid className='container-trasparent text-dark my-5 p-5 rounded'>
@@ -142,14 +142,14 @@ export default function Authors() {
                           </Form.Group>
                       </Form>
                   </Col>
-                  <Col xs={3}>
+                  {/* <Col xs={3}>
                       <Button variant={'light'} className='btn btn-outline-dark w-auto' onClick={handleShow}>Aggiungi Autore</Button>
-                  </Col>
+                  </Col> */}
               </Row>
 
 
               {/* Modale Aggiungi Autore */}
-              <Modal show={show} onHide={handleClose}>
+              {/* <Modal show={show} onHide={handleClose}>
                   <Modal.Header closeButton>
                       <Modal.Title className='text-dark'>Aggiungi Autore</Modal.Title>
                   </Modal.Header>
@@ -183,7 +183,7 @@ export default function Authors() {
                           Aggiungi
                       </Button>
                   </Modal.Footer>
-              </Modal>
+              </Modal> */}
 
               
 

@@ -16,7 +16,7 @@ function App() {
   return (
     <AuthContextProvider>
 
-      <Container fluid className='d-flex m-0 p-0 justify-content-center'>
+      <Container fluid className='d-flex m-0 p-0 justify-content-end justify-content-xxl-center'>
         <BrowserRouter>
           {/* <MainNavbar /> */}
           <Routes>

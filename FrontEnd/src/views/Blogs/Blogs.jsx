@@ -175,7 +175,7 @@ export default function Blogs() {
             <Col xs={3} md={2} className='d-none d-md-flex flex-column shadow fixed-top' style={{ height: '100vh', maxWidth: '150px' }}>
                 <Sidebar />
             </Col>
-            <Col xs={12} md={8} >
+            <Col xs={12} md={10}>
                 <MainNavbar />
 
 
