@@ -15,9 +15,7 @@ const server = express();
 passport.use('google', googleStrategy);
 server.use(express.json());
 
-server.use(cors({
-    origin : 'http://localhost:3000',
-}))
+server.use(cors());
 
 // Google Strategy
 

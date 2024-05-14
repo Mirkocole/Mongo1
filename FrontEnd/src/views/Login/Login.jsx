@@ -104,7 +104,7 @@ export default function Login() {
                         <Form.Group className="mb-3">
                             <Form.Check type="checkbox" label="Accetto le condizioni di privacy" />
                         </Form.Group>
-                        <Button variant="dark" type="button" >
+                        <Button variant="dark" type="button" onClick={()=>navigate('/signup')}>
                             Registrati
                         </Button>
                         <Button type="submit" className='mx-2 bg-violet border border-none' onClick={(e) => handleLogin(e)}>

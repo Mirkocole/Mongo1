@@ -10,6 +10,7 @@ import Authors from './views/Authors/Authors';
 import Login from './views/Login/Login';
 import AuthContextProvider from './context/AuthContextProvider';
 import Profile from './views/Profile/Profile';
+import Register from './views/Register/Register';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           {/* <MainNavbar /> */}
           <Routes>
             <Route path='/' element={<Login />} />
+            <Route path='/signup' element={<Register />} />
             <Route path='/home' element={<Homepage />} />
             <Route path='/blogs' element={<Blogs />} />
             <Route path='/authors' element={<Authors />} />
