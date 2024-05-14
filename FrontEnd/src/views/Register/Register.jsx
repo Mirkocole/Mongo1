@@ -37,11 +37,11 @@ export default function Register() {
         image.append('data', JSON.stringify(valueForm))
         let res = await fetch(process.env.REACT_APP_URL_AUTHORS, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('token') },
           body: image
         });
         if (res.ok) {
           let json = await res.json();
+          console.log(json)
         }
         setRefresh((prev) => prev = !prev);
 
@@ -52,8 +52,10 @@ export default function Register() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(valueForm)
         });
-        console.log(JSON.stringify(valueForm));
-        setRefresh((prev) => prev = !prev);
+        if(res.ok){
+          let json = await res.json();
+          console.log(json);
+        }
       }
     } catch (error) {
       console.log(error)
