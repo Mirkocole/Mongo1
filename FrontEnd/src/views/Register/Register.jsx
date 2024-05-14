@@ -69,7 +69,7 @@ export default function Register() {
 
 
       <Container fluid className='m-0 p-5 d-flex justify-content-center bg-dark' style={{ height: '100vh' }}>
-        <Col xs="12" md="8" lg="6" xl="4" className='p-5 border d-flex flex-column rounded shadow align-items-center justify-content-between bg-light' style={{ maxHeight: '600px' }}>
+        <Col xs="12" md="8" lg="6" xl="4" className='p-5 border d-flex flex-column rounded shadow align-items-center justify-content-between bg-light' style={{ maxHeight: '800px' }}>
           <img src={Logo} style={{ height: '150px' }} className='' />
           <Form>
             <Form.Group>
