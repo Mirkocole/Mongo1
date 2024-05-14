@@ -83,6 +83,10 @@ export default function Register() {
               <Form.Control type="email" placeholder="inserisci l'email" id='email' onChange={(e) => handleForm(e)} />
             </Form.Group>
             <Form.Group>
+              <Form.Label className='text-dark'>Password</Form.Label>
+              <Form.Control type="password"  id='password' onChange={(e) => handleForm(e)} />
+            </Form.Group>
+            <Form.Group>
               <Form.Label className='text-dark'>Data di Nascita</Form.Label>
               <Form.Control type="date" id='data_di_nascita' onChange={(e) => handleForm(e)} />
             </Form.Group>
