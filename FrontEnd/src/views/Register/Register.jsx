@@ -16,15 +16,7 @@ export default function Register() {
     avatar: ''
   });
 
-  const [image, setImage] = useState(new FormData());
-  const handleImage = (img) => {
-    console.log(img)
-    setImage((prev) => {
-      prev.delete('avatar');
-      prev.append('avatar', img);
-      return prev
-    });
-  }
+  
 
 
   const handleForm = (e) => setValueForm((prev) => prev = { ...prev, [e.target.id]: e.target.value });
@@ -32,22 +24,9 @@ export default function Register() {
   async function createAuthors() {
     try {
 
-      if (image.has('avatar')) {
-        image.delete('data');
-        image.append('data', JSON.stringify(valueForm))
-        let res = await fetch(process.env.REACT_APP_URL_AUTHORS, {
-          method: 'POST',
-          body: image
-        });
-        if (res.ok) {
-          let json = await res.json();
-          console.log(json)
-        }
-        setRefresh((prev) => prev = !prev);
+      
 
-      } else {
-
-        let res = await fetch(process.env.REACT_APP_URL_AUTHORS, {
+        let res = await fetch(process.env.REACT_APP_URL_AUTH+'register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(valueForm)
@@ -56,7 +35,7 @@ export default function Register() {
           let json = await res.json();
           console.log(json);
         }
-      }
+      
     } catch (error) {
       console.log(error)
     }
@@ -89,10 +68,6 @@ export default function Register() {
             <Form.Group>
               <Form.Label className='text-dark'>Data di Nascita</Form.Label>
               <Form.Control type="date" id='data_di_nascita' onChange={(e) => handleForm(e)} />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label className='text-dark'>Avatar</Form.Label>
-              <Form.Control type="file" id='avatar' onChange={(e) => handleImage(e.target.files[0])} />
             </Form.Group>
             <Button variant="dark" type="button" onClick={createAuthors} className='my-2'>
               Registrati
